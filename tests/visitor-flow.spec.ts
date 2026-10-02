@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("visitors can search and filter the static directory", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Your next");
   const directory = page.locator("#directory");
   const search = page.getByRole("searchbox");
@@ -22,7 +22,7 @@ test("visitors can search and filter the static directory", async ({ page }) => 
 });
 
 test("discovery links preset categories and the page fits its viewport", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("link", { name: /Make it a moment/ }).click();
   await expect(page.locator("#directory .tenant:visible")).toHaveCount(3);
   await expect(page.getByRole("button", { name: "Dining", exact: true })).toHaveAttribute("aria-pressed", "true");
@@ -33,7 +33,7 @@ test("discovery links preset categories and the page fits its viewport", async (
 
 test("mobile navigation closes with Escape and returns focus", async ({ page, isMobile }) => {
   test.skip(!isMobile, "Mobile navigation behavior");
-  await page.goto("/");
+  await page.goto("./");
   const menu = page.getByRole("button", { name: "Menu", exact: true });
   await menu.click();
   const close = page.getByRole("button", { name: "Close menu", exact: true });

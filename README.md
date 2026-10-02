@@ -57,3 +57,11 @@ The presentation is shared with the original preview. Keep `experienceHtml` as a
 Confirm tenant records, visitor details and media rights with the mall owner. Download approved images into the project and inspect their crops and alternative text. Verify all intended links, review accessibility with keyboard and screen reader, and inspect the design on real devices. The automated browser checks do not establish complete WCAG conformance or verify image licensing.
 
 This is an independent concept, not an official mall or city website. It remains noindex for pitching. No hosting service has been purchased or production domain configured.
+
+## Hosting on GitHub Pages
+
+The workflow publishes the static website after TypeScript, build and desktop/mobile browser checks pass. The repository's GitHub Pages source must be set to **GitHub Actions** in Settings → Pages. Once enabled, future pushes to main publish automatically; workflow_dispatch is available for manual publication.
+
+The workflow uses `NEXT_PUBLIC_BASE_PATH=/aventura-mall`, which adjusts Next.js assets, the favicon and the test preview to the repository's Pages path. Local development keeps the root path by default. To test a Pages path locally, set the same environment variable when building, serving and running the browser checks.
+
+The compiled static export is hosted without a database, server process or paid hosting account. No custom domain is configured.

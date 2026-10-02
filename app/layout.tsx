@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Aventura Mall | Redesign Concept",
   description: "An independent Aventura Mall concept connecting shopping, dining, art and visitor planning.",
   robots: { index: false, follow: false },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/favicon.svg` },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

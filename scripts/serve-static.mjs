@@ -4,6 +4,7 @@ import { stat } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 
 const root = resolve("out");
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -23,7 +24,14 @@ createServer(async (request, response) => {
       response.writeHead(405).end();
       return;
     }
-    const pathname = decodeURIComponent(new URL(request.url, "http://127.0.0.1").pathname);
+    let pathname = decodeURIComponent(new URL(request.url, "http://127.0.0.1").pathname);
+    if (basePath) {
+      if (pathname !== basePath && !pathname.startsWith(basePath + "/")) {
+        response.writeHead(404).end("Not found");
+        return;
+      }
+      pathname = pathname.slice(basePath.length) || "/";
+    }
     let file = resolve(root, "." + pathname);
     if (file !== root && !file.startsWith(root + sep)) {
       response.writeHead(403).end();

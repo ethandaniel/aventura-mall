@@ -5,6 +5,7 @@ import { extname, resolve, sep } from "node:path";
 
 const root = resolve("out");
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const port = Number(process.env.AVENTURA_PREVIEW_PORT || 3000);
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -48,6 +49,6 @@ createServer(async (request, response) => {
   } catch {
     response.writeHead(404, { "Content-Type": "text/plain" }).end("Not found");
   }
-}).listen(3000, "127.0.0.1", () => {
-  console.log("Static preview: http://127.0.0.1:3000");
+}).listen(port, "127.0.0.1", () => {
+  console.log(`Static preview: http://127.0.0.1:${port}`);
 });

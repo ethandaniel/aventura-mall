@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const baseURL = `http://127.0.0.1:3000${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`;
+const previewPort = process.env.AVENTURA_PREVIEW_PORT || "3147";
+const baseURL = `http://127.0.0.1:${previewPort}${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`;
 
 export default defineConfig({
   testDir: "./tests",
@@ -19,7 +20,8 @@ export default defineConfig({
   webServer: {
     command: "npm run preview",
     url: baseURL,
-    reuseExistingServer: !process.env.CI,
+    env: { AVENTURA_PREVIEW_PORT: previewPort },
+    reuseExistingServer: false,
     timeout: 30_000,
   },
 });

@@ -2,15 +2,15 @@
 
 This renewal proposal is addressed to **Aventura Mall ownership and management**. It covers a simple Next.js redesign concept, the work required to rebuild the full production website, and a budget with ongoing maintenance. Recommended planning allowance: **$130,000 for the full rebuild plus $4,000 per month for maintenance**, subject to a verified inventory. A separate municipal comparison is included in response to the original request for a city budget.
 
-The interactive preview is a design prototype. The accompanying Next.js source is prepared but has not been installed, built, or browser tested because the execution workspace failed to start. The preview uses the same static content, stylesheet, and interaction module as the Next.js project; the preview itself is HTML, not a deployed Next.js application. No database, accounts, tracking, forms, or external integrations are included.
+The interactive demonstration is a static Next.js design prototype, published on the existing Aventura Mall Site. It now includes Ask Aventura, a clearly labeled simulation of AI visitor assistance. Questions produce scripted responses in the browser; there is no live model, database, account system, tracking, form service or backend integration. The standalone HTML preview shares the same authored content and behavior.
 
-**Evidence limit:** the live website could not be fetched in this session. This is a reproduction checklist and planning estimate, not a completed crawl, a verified current directory, or a vendor quote. Stock image endpoints are illustrative and have not been downloaded or checked for reuse in this session. Mall information and sample tenants must be confirmed before public launch.
+**Evidence limit:** selected official mall pages were checked on October 3, 2026 to ground the assistant’s small static snapshot. This is not a complete website crawl, a live directory or event feed, or a vendor quote. The original six directory records remain illustrative; stock image references and reuse permissions remain as documented in the asset register. All production information requires mall approval.
 
 ## The pitch
 
 Aventura Mall’s website should make planning a visit as inviting as the destination itself. We propose a fast, accessible Next.js experience that connects shopping, dining, art, and practical visitor information in one clear journey.
 
-The design introduces a confident visual identity, large photography, a searchable directory, and visit information that is easy to reach on a phone. Visitors can find a brand or restaurant, discover an experience, and get directions without navigating through unrelated content.
+The design introduces a confident visual identity, large photography, a searchable directory, visit information that is easy to reach on a phone, and an AI visitor assistance concept for natural language discovery. Visitors can find a brand or restaurant, discover an experience, and get directions without navigating through unrelated content.
 
 We can begin with a static demonstration to agree on the direction, then deliver the full website in stages. The production engagement includes a verified content inventory, accessible templates, editorial tools, content migration, search preservation, launch support, and ongoing care. The client receives the source code, documentation, accounts under its control, and staff training.
 
@@ -23,11 +23,12 @@ For mall ownership and management, lead with easier visitor planning, faster con
 - A responsive, single page visitor experience with an original Aventura Mall design concept.
 - An editorial hero and three discovery paths for shopping, dining, and art.
 - A sample directory with text search and category filters.
+- Ask Aventura: an interactive, mobile friendly simulation with suggested questions, free text entry, source links, a dated information snapshot, clear limits, safe fallback, and conversation reset.
 - A visit section with an address, directions link, and links to the official website for current details.
 - Keyboard accessible controls, a mobile navigation menu, image fallback treatments, and reduced motion support.
 - A static Next.js App Router project using plain CSS and local JavaScript data, with no database or backend.
 
-Directory records are illustrative. The project does not claim current store locations, event dates, opening hours, availability, or real time status. The address shown is a planning assumption to confirm against the official site. The preview includes external stock image references rather than downloaded assets. There is no form that pretends to submit, and no invented booking workflow.
+The original six directory records are illustrative. The assistant uses selected official-source descriptions checked October 3, 2026 and does not claim live inventory, event dates, opening status, availability, wait times or prices. The mall address matches the official visitor page checked on that date. The preview includes external stock image references rather than downloaded assets. There is no form that pretends to submit, and no invented booking workflow.
 
 ## The complete reproduction checklist
 
@@ -79,16 +80,35 @@ Use preview deployments, reviewed changes, dependency updates, uptime monitoring
 
 Suggested models: Tenant, Restaurant, Artwork, Event, Article, VisitorService, Page, Navigation, SiteSettings and MediaAsset. Every published record needs an owner, review date, slug, title, status and SEO fields. Add location and hours models only when their data is reliable.
 
+## AI visitor assistance
+
+The concept demonstrates three visitor journeys: “Where can I find jewelry for an anniversary gift?”, “I’m in the mood for Mexican food. What are my options?”, and “I’m visiting with my kids this weekend. What activities and events should we check out?” Jewelry responses suggest Mayors and further directory exploration, including Cartier; Mexican dining responses compare Jacinta, Tacology Express and Chipotle Mexican Grill; family responses suggest Rainbow Valley Playground, Rooftop Games and The Aventura Market while explicitly declining to verify this weekend’s events. Related art, directory, hours, parking and accessibility questions lead to appropriate official information. Unsupported questions and requests for inventory, pricing, reservations or dietary safety receive a fallback instead of invented answers.
+
+**Demonstration limits.** This is deterministic keyword routing with authored answers, not a live AI system or conversational reasoning. Every response includes official links and the static snapshot date. It handles repeated questions and recognized multiple topics; ambiguous follow ups may fall back. Questions stay in temporary page memory, with at most eight turns retained; Start over or reload clears them. The demo sends no question to a server or model, uses no browser storage, and asks visitors to avoid personal details.
+
+**Production assumptions to validate during discovery:**
+
+- Ground answers in mall approved tenant, dining, visitor service and event records with stable record IDs, source URLs, publication and review timestamps, owners, and event dates in America/New_York. Confirm data access and reuse rights; do not treat an unreviewed scrape as authoritative.
+- Agree freshness targets with the mall. A proposed policy is to ingest approved updates when published, run a daily reconciliation, and immediately invalidate cancelled events and critical visitor notices. These are assumptions, not contracted service levels. Suppress expired events, label stale records, and fail closed to official pages or concierge when the source is unavailable or conflicting. A generic snapshot date must never imply inventory or event accuracy.
+- Put a model/retrieval endpoint behind a server or managed service, with server side secrets, an allowlist of trusted sources and destinations, rate limits, timeouts, usage caps, and defenses against instructions embedded in source content. No model credentials belong in the browser. The static demonstration remains unchanged in architecture; a production endpoint needs separate technical validation.
+- Require sourced recommendations with source links and freshness context; avoid unsupported assertions and abstain on low confidence. Do not claim bookings, prices, stock, accessibility routes, allergies or emergency advice unless an explicitly scoped and approved source/integration supports them. Offer useful directory and concierge fallbacks when the model or data fails.
+- Establish privacy notice, data minimization, retention and deletion rules, consent where required, redaction, vendor processing terms and access controls before recording any conversation. Avoid collecting children’s names, ages, contact details or precise location. Use aggregate metrics by default; review any transcript sampling separately.
+- Test the three approved journeys, paraphrases, multiple topics, repeated and unsupported questions, adversarial content, stale/cancelled events and outages. Include desktop/mobile, keyboard, close/reopen, reset and accessible response announcements. Measure groundedness, fallback quality, latency, usage and source freshness; agree release thresholds and a disable/rollback switch.
+
+**Commercial treatment.** The existing planning terms remain **$130,000 build plus $4,000 per month**, including the existing 20 service hour monthly allowance. This concept addition does not approve a live AI implementation price or increase the retainer. During discovery, agree whether a bounded production assistant fits the existing development, integration and contingency allowances; document any reallocation and obtain written approval for additional scope before work. Do not silently consume contingency or treat the assistant as an approved fourth integration.
+
+Model/API usage, retrieval/search hosting, data ingestion, monitoring and any vendor/license charges require a separate operating forecast based on provider, traffic, requests per visit, tokens, caching, languages and data volume. The existing $150–$500/month vendor allowance and year one totals exclude unpriced AI costs. Model usage caps and ongoing evaluation/editorial work must be agreed; the $4,000 retainer is not unlimited AI operation or 24/7 supervision. No new service or purchase is authorized by this demonstration.
+
 ## Delivery plan
 
 | Phase | Duration assumption | Deliverables |
 | --- | --- | --- |
-| Discovery and inventory | 2 weeks | Verified crawl, content counts, integration register, ownership, budget and acceptance criteria |
-| Information architecture and design | 3 weeks | Navigation, wireframes, design system and approved mobile and desktop templates |
-| Next.js development | 4 to 5 weeks | Public pages, directory, CMS integration if selected, SEO and accessible components |
-| Migration and validation | 3 weeks overlapping development | Content imports, redirects, media optimization and functional checks |
-| Acceptance and launch | 2 weeks | Owner review, independent accessibility audit, remediation, training, rollback and launch |
-| Stabilization | 30 days after launch | Defect correction, index monitoring and handoff |
+| Discovery and inventory | 2 weeks | Verified crawl, content counts, integration register, ownership, budget and acceptance criteria; validate AI sources, freshness, privacy, usage assumptions and inclusion/change scope |
+| Information architecture and design | 3 weeks | Navigation, wireframes, design system and approved mobile and desktop templates; approve assistant journeys, sourced answers and fallback wording |
+| Next.js development | 4 to 5 weeks | Public pages, directory, CMS integration if selected, SEO and accessible components; integrate the bounded production assistant only after scope and source access approval |
+| Migration and validation | 3 weeks overlapping development | Content imports, redirects, media optimization and functional checks; evaluate answer grounding, stale events and service failure behavior |
+| Acceptance and launch | 2 weeks | Owner review, independent accessibility audit, remediation, training, rollback and launch; approve AI quality/privacy/cost gates and operator disable controls |
+| Stabilization | 30 days after launch | Defect correction, index monitoring and handoff; review assistant quality, source freshness and usage against agreed caps |
 
 Allow **12 to 16 calendar weeks** overall if client reviews occur within five business days. Large inventories, multilingual migration, vendor delays or city procurement can extend this. Set a content freeze and launch criteria before committing to a launch date.
 
@@ -158,6 +178,7 @@ For a municipal project, review applicable accessibility obligations with counse
 - Every agreed URL and record is migrated or explicitly retired, with an owner approved redirect matrix.
 - Tenant and visitor information is approved and has a documented update process.
 - Search, filters, navigation, external actions and any real forms work; empty and failure states are usable.
+- Assistant responses are traceable to approved, fresh sources; expired/cancelled events, unsupported requests and service outages have useful fallbacks. Approved journeys, paraphrases, repeated questions, keyboard/mobile behavior and privacy/usage controls pass the agreed evaluation.
 - Desktop, tablet and mobile layouts pass keyboard, screen reader and zoom checks. An automated scan alone does not establish accessibility conformance.
 - Representative production pages aim for mobile p75 LCP at or below 2.5 seconds, INP at or below 200 milliseconds and CLS at or below 0.1. Use lab budgets before launch and field data once sufficient traffic exists; targets are not guarantees.
 - Metadata, canonical URLs, robots, sitemaps, redirects and structured data are checked against approved content.
@@ -168,8 +189,8 @@ For a municipal project, review applicable accessibility obligations with counse
 
 ## Source and asset status
 
-The user supplied [the Aventura Mall website](https://aventuramall.com/) as the reference. Its current content and functionality were not fetched in this session. All scope counts are estimating assumptions. Sample tenants, the address and the mall concept should be verified against the owner’s source before public release.
+The user supplied [the Aventura Mall website](https://aventuramall.com/) as the reference. Selected official pages were checked October 3, 2026: [Mayors](https://aventuramall.com/shops/mayors/), [shopping directory](https://aventuramall.com/shops/), [Jacinta](https://aventuramall.com/dining/jacinta/), [Tacology Express](https://aventuramall.com/dining/tacology/), [Chipotle Mexican Grill](https://aventuramall.com/dining/chipotlemexicangrill/), [experiences](https://aventuramall.com/experiences/), and [visitor information](https://aventuramall.com/visit/). This verifies a small source snapshot, not a full crawl or current event calendar. All production scope counts remain estimating assumptions.
 
 The demonstration references three Unsplash image endpoints as illustrative stock, not photos of Aventura Mall. Endpoints and proposed use are listed with the Next.js source. No asset was downloaded, no individual photographer or license was verified, and no video was included. Before deployment, obtain approved mall photography or verify stock source pages and licenses, download the permitted originals, produce optimized local copies, and retain provenance. Use the mall’s actual architecture, art and dining imagery in a final pitch when permission is available.
 
-The remaining operational blocker is the failed execution workspace. Next.js installation, build, local preview, image downloads, browser checks and private hosting remain unverified. The embedded preview is a saved prototype, not evidence that those steps passed.
+The original failed workspace limitation has been resolved in the Mac checkout. Dependency installation, typecheck and static build passed; desktop/mobile interaction checks finished with 16 passed and two desktop skips for mobile-only cases; detailed evidence is recorded in README.md. The existing Site is the publication target, with its audience preserved. A separate historical GitHub Pages Configure Pages failure does not determine Sites publication status. Media rights, complete accessibility assessment, mall approved production data and live AI integration remain outside this concept verification.
